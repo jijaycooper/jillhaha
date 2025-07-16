@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Baliw Baliw Baliw kay Jill</title>
+  <style>
+    body {
+      background: #fff0f6;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .flower {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      display: none; /* Hide by default */
+    }
+
+    .petal {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      background: pink;
+      border-radius: 50%;
+      animation: pulse 3s infinite ease-in-out;
+    }
+
+    .petal:nth-child(1) { top: 0; left: 60px; }
+    .petal:nth-child(2) { top: 60px; left: 0; }
+    .petal:nth-child(3) { bottom: 60px; left: 0; }
+    .petal:nth-child(4) { bottom: 0; left: 60px; }
+    .petal:nth-child(5) { bottom: 60px; right: 0; }
+    .petal:nth-child(6) { top: 60px; right: 0; }
+
+    .center {
+      position: absolute;
+      top: 90px;
+      left: 90px;
+      width: 120px;
+      height: 120px;
+      background: deeppink;
+      border-radius: 50%;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.85; }
+    }
+
+    .question-container {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .question-container button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .flower-message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-shadow: 1px 1px 4px #c2185b;
+      pointer-events: none;
+      z-index: 2;
+      width: 90%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="question-container">
+    <h2>Do you know why calculus is hard?</h2>
+    <button id="whybtn">WHY</button>
+  </div>
+  <div style="display: flex; gap: 30px; justify-content: center; align-items: center;">
+    <div class="flower" id="flower1">
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="center"></div>
+    </div>
+    <div class="flower" id="flower2">
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="center"></div>
+    </div>
+    <div class="flower" id="flower3">
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="center"></div>
+      <p class="flower-message">Hindi ko rin alam, anyway good morninggggggg, this is ur goodluck flowerssssss</p>
+    </div>
+    <div class="flower" id="flower4">
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="center"></div>
+    </div>
+    <div class="flower" id="flower5">
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="center"></div>
+    </div>
+  </div>
+  <script>
+    const whyBtn = document.getElementById('whybtn');
+    const flowers = [
+      document.getElementById('flower1'),
+      document.getElementById('flower2'),
+      document.getElementById('flower3'),
+      document.getElementById('flower4'),
+      document.getElementById('flower5')
+    ];
+    const question = document.querySelector('.question-container');
+
+    whyBtn.onclick = function() {
+      flowers.forEach(flower => flower.style.display = 'block');
+      question.style.display = 'none';
+    };
+  </script>
+</body>
+</html>
